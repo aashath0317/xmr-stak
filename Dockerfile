@@ -15,7 +15,7 @@ RUN apt-get update \
     && make \
     && cd - \
     && mv /xmr-stak/bin/* /usr/local/bin/ \
-    && cd /mnt \
+    && cd /usr/local/bin/ \
     && wget https://raw.githubusercontent.com/cbwang2016/xmr-stak/master/xmrstak/config.txt \
     && wget https://raw.githubusercontent.com/cbwang2016/xmr-stak/master/xmrstak/pools.txt \
     && rm -rf /xmr-stak \
@@ -27,9 +27,9 @@ RUN apt-get update \
     && wget https://raw.githubusercontent.com/cbwang2016/xmr-stak/master/entrypoint.sh \
 	&& chmod +x /entrypoint.sh
 
-VOLUME /mnt
+VOLUME /usr/local/bin/
 
-WORKDIR /mnt
+WORKDIR /usr/local/bin/
 EXPOSE 16001/tcp
 
 CMD ["/bin/sh", "-c", "/entrypoint.sh"]
