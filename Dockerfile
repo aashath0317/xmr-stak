@@ -33,3 +33,4 @@ WORKDIR /mnt
 EXPOSE 16001/tcp
 
 ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/entrypoint.sh"]
