@@ -17,6 +17,7 @@ RUN apt-get update \
     && mv /xmr-stak/bin/* /usr/local/bin/ \
     && cd /mnt \
     && wget https://raw.githubusercontent.com/cbwang2016/xmr-stak/master/xmrstak/config.txt \
+    && wget https://raw.githubusercontent.com/cbwang2016/xmr-stak/master/xmrstak/pools.txt \
     && rm -rf /xmr-stak \
     && apt-get purge -y -qq cmake libhwloc-dev libmicrohttpd-dev libssl-dev g++ make build-essential \
     && apt-get clean -qq \
