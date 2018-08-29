@@ -1,0 +1,9 @@
+{
+  "name": "test",
+  "description": "test test",
+  "keywords": ["test"],
+  "env": {},
+  "website": "https://github.com/cbwang2016/xmr-stak",
+  "repository": "https://github.com/cbwang2016/xmr-stak",
+  "stack": "container"
+ }
