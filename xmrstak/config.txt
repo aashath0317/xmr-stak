@@ -1,31 +1,8 @@
 
 /*
- * pool_address    - Pool address should be in the form "pool.supportxmr.com:3333". Only stratum pools are supported.
- * wallet_address  - Your wallet, or pool login.
- * pool_password   - Can be empty in most cases or "x".
- * use_nicehash    - Limit the nonce to 3 bytes as required by nicehash.
- * use_tls         - This option will make us connect using Transport Layer Security.
- * tls_fingerprint - Server's SHA256 fingerprint. If this string is non-empty then we will check the server's cert against it.
- * pool_weight     - Pool weight is a number telling the miner how important the pool is. Miner will mine mostly at the pool 
- *                   with the highest weight, unless the pool fails. Weight must be an integer larger than 0.
- *
- * We feature pools up to 1MH/s. For a more complete list see M5M400's pool list at www.moneropools.com
- */
-"pool_list" :
-[
-	{"pool_address" : "pool.supportxmr.com:3333", "wallet_address" : "46KvXf51aHaFif52Cts7LRTgKu9jP2yeFCYJwXDGCT15MehDz6e9sDWCD5W6a5aBxu18KGbAnfagRc4Hm9AftWGpM8fB5M6", "pool_password" : "x", "use_nicehash" : false, "use_tls" : false, "tls_fingerprint" : "", "pool_weight" : 1 },
-],
-
-/*
- * currency to mine
- * allowed values: 'monero' or 'aeon'
- */
-"currency" : "monero",
-
-/*
  * Network timeouts.
- * Because of the way this client is written it doesn't need to constantly talk (keep-alive) to the server to make 
- * sure it is there. We detect a buggy / overloaded server by the call timeout. The default values will be ok for 
+ * Because of the way this client is written it doesn't need to constantly talk (keep-alive) to the server to make
+ * sure it is there. We detect a buggy / overloaded server by the call timeout. The default values will be ok for
  * nearly all cases. If they aren't the pool has most likely overload issues. Low call timeout values are preferable -
  * long timeouts mean that we waste hashes on potentially stale jobs. Connection report will tell you how long the
  * server usually takes to process our calls.
@@ -137,14 +114,6 @@
 "daemon_mode" : false,
 
 /*
- * Buffered output control.
- * When running the miner through a pipe, standard output is buffered. This means that the pipe won't read
- * each output line immediately. This can cause delays when running in background.
- * Set this option to true to flush stdout after each line, so it can be read immediately.
- */
-"flush_stdout" : false,
-
-/*
  * Output file
  *
  * output_file  - This option will log all output to a file.
@@ -171,10 +140,10 @@
  *
  * http_login - Login. Empty login disables authentication.
  * http_pass  - Password.
- */ 
+ */
 "http_login" : "",
 "http_pass" : "",
- 
+
 /*
  * prefer_ipv4 - IPv6 preference. If the host is available on both IPv4 and IPv6 net, which one should be choose?
  *               This setting will only be needed in 2020's. No need to worry about it now.
